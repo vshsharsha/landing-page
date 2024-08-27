@@ -1,0 +1,120 @@
+/* Base styles for the navigation menu */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+
+.nav-container.scrolled {
+  background-color: #222; /* Change background color when scrolled */
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+  transition: color 0.3s;
+}
+
+.nav-item a:hover {
+  color: #ff9800; /* Change color when hovered */
+}
+
+.nav-item.search {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item .search input {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+}
+
+.nav-item .search button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.nav-item .search button:hover {
+  color: #ff9800;
+}
+
+.content {
+  padding: 80px 20px; /* Space to accommodate fixed navbar */
+}
+
+/* Styles for different sports sections */
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.football { background-color: #4CAF50; }
+.basketball { background-color: #FF5722; }
+.baseball { background-color: #2196F3; }
+.tennis { background-color: #FFC107; }
+.cricket { background-color: #3E4EB8; }
+
+.sidebar {
+  position: absolute;
+  top: 200;
+  left: 200;
+  height: 600vh;
+  width: 30px;
+  
+  padding: 0.2rem 0.8rem;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .main-content {
+  left: 300px;
+  width: calc(50% - 300px);
+}
+
+.sidebar.active {
+  width: 200px;
+}
+
+.sidebar #btn {
+  position: absolute;
+  color: rgb(230, 219, 219);
+  top: 2rem;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 0px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
